@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Search from './Search';
+import Results from './Results';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      currentUrl: null,
+      okUrl: null
+    }
+    this.setUrlVal = this.setUrlVal.bind(this);
+    this.search = this.search.bind(this);
+  }
+
+  setUrlVal(e) {
+    let val = e.currentTarget.value;
+    let url = `https://restcountries.eu/rest/v2/name/${val}`;
+    this.setState({
+      currentUrl: url
+    })
+  }
+
+  search() {
+    this.setState((prevState) => {
+      return {okUrl: prevState.currentUrl}
+    })
+  }
+
+  render() {
+    return(
+      <div className="app">
+        <header>
+          <Search handleChange={this.setUrlVal} handleClick={this.search}/>
+          <Results url={this.state.okUrl}/>
+        </header>
+      </div>
+    )
+  }
 }
-
-export default App;
