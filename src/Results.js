@@ -11,6 +11,9 @@ export default function Results(props) {
                 console.log(data)
                 setResults(data.data)
             })
+            .catch((error) => {
+                console.log(error)
+            })
         }
     }, [props.url])
     return (
