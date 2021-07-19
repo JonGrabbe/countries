@@ -55,7 +55,7 @@ export default class App extends React.Component {
         return(
             <div className="app">
                 <CountriesContext.Provider value={this.state.countries}>
-                    <Header handleChange={this.getSearchTerm} handleSearch={this.search}/>
+                    <Header handleChange={this.getSearchTerm} handleSearch={this.search} changeTheme={this.changeTheme} theme={this.state.theme}/>
                     <Gallary />
                 </CountriesContext.Provider>
             </div>
