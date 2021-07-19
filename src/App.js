@@ -3,7 +3,7 @@ import axios from 'axios';
 import { CountriesContext } from './CountriesContext';
 import Gallary from './Gallary';
 import Header from './Header';
-import './bulid/app.css';
+import './dist/css/app.min.css';
 
 export default class App extends React.Component {
     constructor() {
@@ -19,7 +19,17 @@ export default class App extends React.Component {
         this.search = this.search.bind(this);
     }
     changeTheme() {
-        let newTheme = this.state.theme === 'dark' ? 'light' : this.state.theme;
+        let newTheme;
+        if(this.state.theme === 'dark') {
+            newTheme = 'light'
+        } else {
+            newTheme = 'dark'
+        }
+        function setTheme(theme) {
+            let tag = document.getElementsByTagName('html')[0];
+            tag.classList.toggle('dark')
+        }
+        setTheme()
         this.setState({
             theme: newTheme
         })
