@@ -26,8 +26,19 @@ body {
   margin: 0;
 }
 
+.app {
+  max-width: 1440px;
+  margin: auto;
+}
+
+button {
+  border: 0;
+  color: inherit;
+  background-color: inherit;
+  cursor: pointer;
+}
+
 .dark-mode-button {
-  background-color: #2b3945;
   padding: 25px;
 }
 

@@ -35,8 +35,18 @@ html {
 body {
   margin: 0;
 }
+.app {
+  max-width: $destop_max_width;
+  margin: auto;
+}
+button {
+  border: 0;
+  color: inherit;
+  background-color: inherit;
+  cursor: pointer;
+}
 .dark-mode-button {
-  background-color: map-get($colors, "dark blue");
+  //   background-color: map-get($colors, "dark blue");
   padding: 25px;
 }
 h1 {
