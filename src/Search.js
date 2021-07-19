@@ -1,10 +1,8 @@
 export default function Search(props) {
     return(
-        <div className="search-bar">
-            <input type="text" onChange={props.handleChange}></input>
-            <button onClick={props.handleClick}>
-                search
-            </button>
+        <div className="search">
+            <input type="text" onChange={props.handleChange}/>
+            <button onClick={props.handleSearch}>search</button>
         </div>
     );
 }
