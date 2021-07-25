@@ -1,0 +1,8 @@
+.header {
+  & > .inner-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  background-color: map-get($dark-mode-colors, "background");
+  color: map-get($dark-mode-colors, "text");
+}
