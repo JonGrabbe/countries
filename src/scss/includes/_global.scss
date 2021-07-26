@@ -3,8 +3,11 @@ $dark-mode-colors: (
   "elements": hsl(207, 26%, 17%),
   "text": hsl(0, 0%, 100%),
 );
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap");
+
 html {
   font-size: 16px;
+  font-family: "Nunito Sans", sans-serif;
 }
 body {
   margin: 0;
@@ -20,6 +23,8 @@ button {
   border: 0;
   background: none;
   color: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
 .inner-wrapper {
   padding: 2rem 1rem;

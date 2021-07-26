@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap");
 html {
   font-size: 16px;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 body {
@@ -18,6 +20,8 @@ button {
   border: 0;
   background: none;
   color: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .inner-wrapper {
@@ -29,7 +33,7 @@ button {
   color: white;
 }
 
-.header > .inner-wrapper {
+.header .inner-wrapper {
   display: flex;
   justify-content: space-between;
 }
