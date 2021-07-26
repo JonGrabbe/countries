@@ -9,6 +9,7 @@ export default class App extends React.Component {
         this.state = {
             countriesData: []
         }
+        this.setSearchTerm = this.setSearchTerm.bind(this);
     }
 
     getCountryData(url) {
@@ -21,7 +22,6 @@ export default class App extends React.Component {
             })
             .catch(err => {
                 console.log(err)
-                this.state.errorMsg = 'opps somthing went wrong'
             })
     }
 
@@ -29,8 +29,14 @@ export default class App extends React.Component {
         //sets the endpoint based on what option was chosen by the user 
     }
 
-    setSearchTerm() {
+    setSearchTerm(e) {
         //sets the search keyword
+        let val = e.currentTarget.value;
+        this.setState(() => {
+            return {
+                searchTerm: val
+            }
+        })
     }
 
     search() {
@@ -44,7 +50,7 @@ export default class App extends React.Component {
     render() {
         return(
             <div className="app">
-                <Header />                
+                <Header handleChangeText={this.setSearchTerm}/>                
             </div>
         )
     }
