@@ -16,7 +16,7 @@ export default function Header(props) {
             </div>
             <div className="inner-wrapper search-controls-container">
                 <SearchInput handleChange={props.handleChangeText}/>
-                <Select />
+                <Select handleSelect={props.handleSelect}/>
             </div>
         </header>
     );

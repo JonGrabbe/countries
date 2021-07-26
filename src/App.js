@@ -10,6 +10,7 @@ export default class App extends React.Component {
             countriesData: []
         }
         this.setSearchTerm = this.setSearchTerm.bind(this);
+        this.setSearchURL = this.setSearchURL.bind(this);
     }
 
     getCountryData(url) {
@@ -25,8 +26,10 @@ export default class App extends React.Component {
             })
     }
 
-    setSearchURL() {
-        //sets the endpoint based on what option was chosen by the user 
+    setSearchURL(e) {
+        //sets the endpoint based on what option was chosen by the user in the select element
+        let val = e.currentTarget.value;
+        console.log(val)
     }
 
     setSearchTerm(e) {
@@ -50,7 +53,7 @@ export default class App extends React.Component {
     render() {
         return(
             <div className="app">
-                <Header handleChangeText={this.setSearchTerm}/>                
+                <Header handleChangeText={this.setSearchTerm} handleSelect={this.setSearchURL}/>                
             </div>
         )
     }
