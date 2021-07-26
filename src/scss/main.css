@@ -37,4 +37,14 @@ button {
   display: flex;
   justify-content: space-between;
 }
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.theme-toggle .moon-icon {
+  margin-right: 5px;
+}
 /*# sourceMappingURL=main.css.map */

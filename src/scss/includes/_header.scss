@@ -6,3 +6,11 @@
   background-color: map-get($dark-mode-colors, "background");
   color: map-get($dark-mode-colors, "text");
 }
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .moon-icon {
+    margin-right: 5px;
+  }
+}
