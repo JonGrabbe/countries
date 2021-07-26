@@ -1,4 +1,6 @@
 import MoonIcon from './MoonIcon';
+import SearchInput from './SearchInput';
+import Select from './Select';
 
 export default function Header(props) {
     let currentTheme = props.theme === 'light' ? 'dark mode' : 'light mode';
@@ -11,6 +13,10 @@ export default function Header(props) {
                     {props.theme !== 'light' ? <MoonIcon theme="light" /> : <MoonIcon theme="dark" /> }
                     {currentTheme}
                 </button>
+            </div>
+            <div className="inner-wrapper search-controls-container">
+                <SearchInput />
+                <SearchInput />
             </div>
         </header>
     );
