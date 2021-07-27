@@ -3,6 +3,9 @@
     display: flex;
     justify-content: space-between;
   }
+  .top {
+    background-color: $dark-mode-elements-color;
+  }
   background-color: map-get($dark-mode-colors, "background");
   color: map-get($dark-mode-colors, "text");
 }
@@ -15,11 +18,25 @@
   }
 }
 
-.search-container {
+.search-controls-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 90%;
+  margin: auto;
 }
-.text-input {
-  background-color: $dark-mode-elements-color;
-  border: none;
-  padding: 8px;
-  color: $dark-mode-text-color;
+
+.search-container {
+  display: flex;
+  align-items: center;
+  .text-input {
+    background-color: $dark-mode-elements-color;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: $dark-mode-text-color;
+    flex-grow: 3;
+  }
+  button {
+    flex-grow: 1;
+  }
 }

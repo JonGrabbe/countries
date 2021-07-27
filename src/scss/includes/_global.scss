@@ -1,11 +1,12 @@
 $dark-mode-colors: (
-  "background": hsl(209, 23%, 22%),
+  "background": hsl(207, 26%, 17%),
   "elements": hsl(207, 26%, 17%),
   "text": hsl(0, 0%, 100%),
 );
-$dark-mode-background-color: hsl(209, 23%, 22%);
-$dark-mode-elements-color: hsl(207, 26%, 17%);
+$dark-mode-background-color: hsl(207, 26%, 17%);
+$dark-mode-elements-color: hsl(209, 23%, 22%);
 $dark-mode-text-color: hsl(0, 0%, 100%);
+//dark mode is defualt
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap");
 
@@ -15,6 +16,8 @@ html {
 }
 body {
   margin: 0;
+  background-color: $dark-mode-background-color;
+  color: $dark-mode-text-color;
 }
 h1,
 h2,
@@ -29,6 +32,7 @@ button {
   color: inherit;
   font-family: inherit;
   font-size: inherit;
+  cursor: pointer;
 }
 .inner-wrapper {
   padding: 2rem 1rem;

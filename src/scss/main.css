@@ -6,6 +6,8 @@ html {
 
 body {
   margin: 0;
+  background-color: #202c37;
+  color: white;
 }
 
 h1,
@@ -22,6 +24,7 @@ button {
   color: inherit;
   font-family: inherit;
   font-size: inherit;
+  cursor: pointer;
 }
 
 .inner-wrapper {
@@ -29,13 +32,17 @@ button {
 }
 
 .header {
-  background-color: #2b3945;
+  background-color: #202c37;
   color: white;
 }
 
 .header .inner-wrapper {
   display: flex;
   justify-content: space-between;
+}
+
+.header .top {
+  background-color: #2b3945;
 }
 
 .theme-toggle {
@@ -48,10 +55,47 @@ button {
   margin-right: 5px;
 }
 
-.text-input {
-  background-color: #202c37;
+.search-controls-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 90%;
+  margin: auto;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-container .text-input {
+  background-color: #2b3945;
   border: none;
-  padding: 8px;
+  padding: 10px;
+  border-radius: 5px;
   color: white;
+  flex-grow: 3;
+}
+
+.search-container button {
+  flex-grow: 1;
+}
+
+@media (min-width: 362px) {
+  .search-container .text-input {
+    flex: initial;
+    min-width: 240px;
+  }
+  .search-container button {
+    flex-grow: initial;
+    margin-right: 10px;
+  }
+}
+
+@media (min-width: 600px) {
+  .search-controls-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 /*# sourceMappingURL=main.css.map */

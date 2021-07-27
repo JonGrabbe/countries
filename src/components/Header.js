@@ -7,7 +7,7 @@ export default function Header(props) {
 
     return (
         <header className="header">
-            <div className="inner-wrapper">
+            <div className="inner-wrapper top">
                 <h1>Where in the world?</h1>
                 <button className="theme-toggle">
                     {props.theme !== 'light' ? <MoonIcon theme="light" /> : <MoonIcon theme="dark" /> }
