@@ -60,18 +60,21 @@ export default class App extends React.Component {
     search() {
         let region = this.state.region;
         let search = this.state.searchTerm;
+        let baseEndpoint = 'https://restcountries.eu/rest/v2/';
+
         function filterRes(arr) {
             return arr.filter(country => country.region === region)
         }
 
-        if(search) {
-            if(region === 'all') {
-                this.getCountryData('https://restcountries.eu/rest/v2/name/'+search)        
-            } else {
-                this.getCountryData('https://restcountries.eu/rest/v2/name/'+search, filterRes)
-            }
+        if(search === '' && region === 'all') {
+            //get all countries
+            this.getCountryData(baseEndpoint+'all')
+        } else if (search && region !== 'all') {
+            this.getCountryData(baseEndpoint+'name/'+search, filterRes)
+        } else if (search && region === 'all') {
+            this.getCountryData(baseEndpoint+'name/'+search)
         } else {
-            this.getCountryData('https://restcountries.eu/rest/v2/region/'+region)
+            this.getCountryData(baseEndpoint+'region/'+region)
         }
     }
 
