@@ -4,19 +4,19 @@ export default function Select(props) {
             <option value="all">
                 all
             </option>
-            <option value="africa">
+            <option value="Africa">
                 Africa
             </option>
-            <option value="americas">
+            <option value="Americas">
                 Americas
             </option>
-            <option value="europe">
+            <option value="Europe">
                 europe
             </option>
-            <option value="asia">
+            <option value="Asia">
                 Asia
             </option>
-            <option value="oceania">
+            <option value="Oceania">
                 Oceania
             </option>
         </select>

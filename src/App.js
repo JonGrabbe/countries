@@ -21,6 +21,7 @@ export default class App extends React.Component {
         axios.get(url)
             .then(res => {
                 if(filter) {
+                    console.log('filter works')
                     this.setState({
                         countriesData: filter(res.data)
                     })
@@ -56,14 +57,20 @@ export default class App extends React.Component {
     }
 
     search() {
-        let endpoint = `https://restcountries.eu/rest/v2/${this.state.region}`;
-
         if(this.state.searchTerm === '') {
-            this.getCountryData(endpoint)
+            this.getCountryData('https://restcountries.eu/rest/v2/region/'+this.state.region);
             return;
         }
-        
-        
+        let region = this.state.region;
+        function filterRes(arr) {
+            return arr.filter(country => country.region === region)
+        }
+        let endpoint = 'https://restcountries.eu/rest/v2/name/'+this.state.searchTerm;
+        if(region != 'all') {
+            this.getCountryData(endpoint, filterRes)
+            return;
+        }
+        this.getCountryData(endpoint)
     }
 
     render() {
