@@ -8,17 +8,24 @@ export default class App extends React.Component {
         super()
         this.state = {
             countriesData: [],
-            searchBy: 'name'
+            region: 'all',
+            searchTerm: ''
         }
         this.setSearchTerm = this.setSearchTerm.bind(this);
         this.setSearchURL = this.setSearchURL.bind(this);
         this.search = this.search.bind(this);
     }
 
-    getCountryData(url) {
+    getCountryData(url, filter) {
         //fills the state with an array of objects from the url provided
         axios.get(url)
             .then(res => {
+                if(filter) {
+                    this.setState({
+                        countriesData: filter(res.data)
+                    })
+                    return;
+                }
                 this.setState({
                     countriesData: res
                 })
@@ -30,15 +37,12 @@ export default class App extends React.Component {
 
     setSearchURL(e) {
         //sets the endpoint based on what option was chosen by the user from the select element
-        let val = e.currentTarget;
-        if(val.id === 'search-filters') {
-            this.setState(() => {
-                return {
-                    searchBy: 'region',
-                    region: val.value
-                }
-            })
-        }
+        let val = e.currentTarget.value;
+        this.setState(() => {
+            return {
+                region: val
+            }
+        })
     }
 
     setSearchTerm(e) {
@@ -52,14 +56,14 @@ export default class App extends React.Component {
     }
 
     search() {
-        console.log('works')
-        if(this.state.searchBy === 'region') {
-            this.getCountryData('https://restcountries.eu/rest/v2/region/'+this.state.region)
-        }
-    }
+        let endpoint = `https://restcountries.eu/rest/v2/${this.state.region}`;
 
-    componentDidMount() {
-        // this.getCountryData('https://restcountries.eu/rest/v2/all')
+        if(this.state.searchTerm === '') {
+            this.getCountryData(endpoint)
+            return;
+        }
+        
+        
     }
 
     render() {
