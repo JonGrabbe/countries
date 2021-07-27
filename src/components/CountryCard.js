@@ -2,7 +2,7 @@ export default function CountryCard(props) {
     return (
         <article className="country-card">
             <div className="flag-img-container">
-                <img src={props.country.flag} />
+                {/* <img src={props.country.flag} /> */}
             </div>
             <h2>{props.country.name}</h2>
             <h3>Population: {props.country.population}</h3>

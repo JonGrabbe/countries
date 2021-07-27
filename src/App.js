@@ -29,7 +29,7 @@ export default class App extends React.Component {
                     return;
                 }
                 this.setState({
-                    countriesData: res
+                    countriesData: res.data
                 })
             })
             .catch(err => {
@@ -58,20 +58,24 @@ export default class App extends React.Component {
     }
 
     search() {
-        if(this.state.searchTerm === '') {
-            this.getCountryData('https://restcountries.eu/rest/v2/region/'+this.state.region);
-            return;
-        }
         let region = this.state.region;
         function filterRes(arr) {
             return arr.filter(country => country.region === region)
         }
-        let endpoint = 'https://restcountries.eu/rest/v2/name/'+this.state.searchTerm;
-        if(region !== 'all') {
-            this.getCountryData(endpoint, filterRes)
+
+        if(this.state.searchTerm === '' && region === 'all') {
+            this.getCountryData('https://restcountries.eu/rest/v2/all')
             return;
         }
-        this.getCountryData(endpoint)
+        if(this.state.searchTerm === '' && region !== 'all') {
+            this.getCountryData('https://restcountries.eu/rest/v2/region/'+region);
+            return;
+        }
+        if(this.state.searchTerm === '' && region !== 'all') {
+            this.getCountryData('https://restcountries.eu/rest/v2/region/'+region, filterRes)
+            return;
+        }
+        // this.getCountryData('https://restcountries.eu/rest/v2/name'+this.state.searchTerm)
     }
 
     render() {
