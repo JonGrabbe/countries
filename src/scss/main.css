@@ -98,4 +98,10 @@ button {
     justify-content: space-between;
   }
 }
+
+.country-card {
+  background-color: #2b3945;
+  padding: 2.5rem;
+  border-radius: 7px;
+}
 /*# sourceMappingURL=main.css.map */
