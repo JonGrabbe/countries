@@ -12,6 +12,7 @@ h1,
 h2,
 h3 {
   margin: 0;
+  font-size: inherit;
 }
 
 button {
@@ -45,5 +46,12 @@ button {
 
 .theme-toggle .moon-icon {
   margin-right: 5px;
+}
+
+.text-input {
+  background-color: #202c37;
+  border: none;
+  padding: 8px;
+  color: white;
 }
 /*# sourceMappingURL=main.css.map */
