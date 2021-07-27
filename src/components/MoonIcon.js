@@ -9,6 +9,6 @@ export default function MoonIcon(props) {
         src = moonLight;
     }
     return (
-        <img src={src} className="moon-icon" width="15px" />
+        <img alt="" src={src} className="moon-icon" width="15px" />
     );
 }

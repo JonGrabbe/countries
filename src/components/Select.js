@@ -13,6 +13,12 @@ export default function Select(props) {
             <option value="europe">
                 europe
             </option>
+            <option value="asia">
+                Asia
+            </option>
+            <option value="oceania">
+                Oceania
+            </option>
         </select>
     );
 }

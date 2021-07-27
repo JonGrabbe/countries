@@ -7,14 +7,16 @@ export default class App extends React.Component {
     constructor() {
         super()
         this.state = {
-            countriesData: []
+            countriesData: [],
+            searchBy: 'name'
         }
         this.setSearchTerm = this.setSearchTerm.bind(this);
         this.setSearchURL = this.setSearchURL.bind(this);
+        this.search = this.search.bind(this);
     }
 
     getCountryData(url) {
-        //fills the state with the array of objects the endpoint defined in the state
+        //fills the state with an array of objects from the url provided
         axios.get(url)
             .then(res => {
                 this.setState({
@@ -27,9 +29,16 @@ export default class App extends React.Component {
     }
 
     setSearchURL(e) {
-        //sets the endpoint based on what option was chosen by the user in the select element
-        let val = e.currentTarget.value;
-        console.log(val)
+        //sets the endpoint based on what option was chosen by the user from the select element
+        let val = e.currentTarget;
+        if(val.id === 'search-filters') {
+            this.setState(() => {
+                return {
+                    searchBy: 'region',
+                    region: val.value
+                }
+            })
+        }
     }
 
     setSearchTerm(e) {
@@ -43,17 +52,20 @@ export default class App extends React.Component {
     }
 
     search() {
-
+        console.log('works')
+        if(this.state.searchBy === 'region') {
+            this.getCountryData('https://restcountries.eu/rest/v2/region/'+this.state.region)
+        }
     }
 
     componentDidMount() {
-        this.getCountryData('https://restcountries.eu/rest/v2/all')
+        // this.getCountryData('https://restcountries.eu/rest/v2/all')
     }
 
     render() {
         return(
             <div className="app">
-                <Header handleChangeText={this.setSearchTerm} handleSelect={this.setSearchURL}/>                
+                <Header handleChangeText={this.setSearchTerm} handleSelect={this.setSearchURL} search={this.search} />                
             </div>
         )
     }
