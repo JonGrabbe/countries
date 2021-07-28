@@ -1,6 +1,7 @@
 import MoonIcon from './MoonIcon';
 import SearchInput from './SearchInput';
 import Select from './Select';
+import {Route} from 'react-router-dom';
 
 export default function Header(props) {
     let currentTheme = props.theme === 'light' ? 'dark mode' : 'light mode';
@@ -14,10 +15,12 @@ export default function Header(props) {
                     {currentTheme}
                 </button>
             </div>
-            <div className="search-controls-container">
-                <SearchInput handleChange={props.handleChangeText} handleClick={props.search}/>
-                <Select handleSelect={props.handleSelect} />
-            </div>
+            <Route path="/" exact>
+                <div className="search-controls-container">
+                    <SearchInput handleChange={props.handleChangeText} handleClick={props.search}/>
+                    <Select handleSelect={props.handleSelect} />
+                </div>
+            </Route>
         </header>
     );
 }

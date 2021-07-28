@@ -135,12 +135,17 @@ a {
   object-fit: contain;
 }
 
+.country-card-page {
+  background-color: inherit;
+}
+
 .back-button {
   display: flex;
   justify-content: center;
   flex-basis: initial;
   width: 6rem;
   align-items: center;
+  margin: 40px 0;
 }
 
 .back-button .back-arrow {
