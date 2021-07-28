@@ -12,13 +12,11 @@ export default function Gallary(props) {
     })
     return (
         <section className="gallary">
-            <BrowserRouter>
                 {props.countries.map(country => <CountryCard country={country} href={country.alpha3Code} />)}
 
                 <Switch>
                     {cards}
                 </Switch>
-            </BrowserRouter>
         </section>
     );
 }

@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import Header from "./components/Header";
 import Gallary from "./components/Gallary";
+import { BrowserRouter } from "react-router-dom";
 import './css/main.min.css';
 
 export default class App extends React.Component {
@@ -80,10 +81,12 @@ export default class App extends React.Component {
 
     render() {
         return(
-            <div className="app">
-                <Header handleChangeText={this.setSearchTerm} handleSelect={this.setSearchURL} search={this.search} />                
-                <Gallary countries={this.state.countriesData} />
-            </div>
+            <BrowserRouter>
+                <div className="app">
+                    <Header handleChangeText={this.setSearchTerm} handleSelect={this.setSearchURL} search={this.search} />                
+                    <Gallary countries={this.state.countriesData} />
+                </div>
+            </BrowserRouter>
         )
     }
 }
