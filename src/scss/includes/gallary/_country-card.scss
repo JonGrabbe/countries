@@ -23,3 +23,17 @@
     }
   }
 }
+
+.back-button {
+  @extend .button;
+  display: flex;
+  justify-content: center;
+  flex-basis: initial;
+  width: 6rem;
+  align-items: center;
+  // padding: 5px 30px;
+  .back-arrow {
+    width: 25px;
+    margin-right: 8px;
+  }
+}

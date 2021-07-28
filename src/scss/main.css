@@ -36,6 +36,11 @@ a {
   padding: 2rem 1rem;
 }
 
+.button, .back-button {
+  background-color: #2b3945;
+  border-radius: 3px;
+}
+
 .header {
   background-color: #202c37;
   color: white;
@@ -128,6 +133,19 @@ a {
 .country-card .flag-img-container img {
   width: 100%;
   object-fit: contain;
+}
+
+.back-button {
+  display: flex;
+  justify-content: center;
+  flex-basis: initial;
+  width: 6rem;
+  align-items: center;
+}
+
+.back-button .back-arrow {
+  width: 25px;
+  margin-right: 8px;
 }
 
 .gallary {

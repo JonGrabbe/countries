@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Gallary from "./components/Gallary";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import CountryCardPage from "./components/CountryCardPage";
-import './css/main.min.css';
+import './scss/main.css';
 
 export default class App extends React.Component {
     constructor() {
