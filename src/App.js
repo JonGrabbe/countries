@@ -2,7 +2,8 @@ import React from "react";
 import axios from "axios";
 import Header from "./components/Header";
 import Gallary from "./components/Gallary";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import CountryCardPage from "./components/CountryCardPage";
 import './css/main.min.css';
 
 export default class App extends React.Component {
@@ -80,11 +81,25 @@ export default class App extends React.Component {
     }
 
     render() {
+        let routes = [];
+        this.state.countriesData.forEach(country => {
+            let path = `/country/${country.alpha3Code}`;
+            let route = (<Route path={path} exact >
+                <CountryCardPage country={country} />
+            </Route>);
+            routes.push(route)
+        })
+
         return(
             <BrowserRouter>
                 <div className="app">
-                    <Header handleChangeText={this.setSearchTerm} handleSelect={this.setSearchURL} search={this.search} />                
-                    <Gallary countries={this.state.countriesData} />
+                    <Header handleChangeText={this.setSearchTerm} handleSelect={this.setSearchURL} search={this.search} />               
+                    <Switch>
+                        <Route path="/" exact>
+                            <Gallary countries={this.state.countriesData} />
+                        </Route>
+                        {routes}
+                    </Switch> 
                 </div>
             </BrowserRouter>
         )
