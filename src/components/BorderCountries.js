@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import BorderCountryLink from "./BorderCountryLink";
 
 export default function BorderCountries(props) {
     const [borderCountries, setBorders] = useState(null);
@@ -21,7 +22,7 @@ export default function BorderCountries(props) {
         <div className="border-countries-container">
             <h2>Border Countries:</h2>
             <div className="borders-countries">
-                {borderCountries ? borderCountries.map(item => item.data[0].name) : null }
+                {borderCountries ? borderCountries.map(item => <BorderCountryLink country={item.data[0]} />) : null }
                 {/* {names.map(item => item)} */}
             </div>
         </div>
