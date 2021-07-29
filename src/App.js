@@ -93,7 +93,7 @@ export default class App extends React.Component {
         return(
             <BrowserRouter>
                 <div className="app">
-                    <Header handleChangeText={this.setSearchTerm} handleSelect={this.setSearchURL} search={this.search} />               
+                    <Header handleChangeText={this.setSearchTerm} handleSelect={this.setSearchURL} search={this.search} searchTerm={this.state.searchTerm} />               
                     <Switch>
                         <Route path="/" exact>
                             <Gallary countries={this.state.countriesData} />

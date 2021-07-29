@@ -4,7 +4,7 @@ export default function SearchInput(props) {
              <button onClick={props.handleClick}>
                 Search
             </button>
-            <input className="text-input" type="text" onChange={props.handleChange} placeholder="search for a country..." />
+            <input className="text-input" type="text" onChange={props.handleChange} placeholder="search for a country..." value={props.searchTerm} />
         </div>
     );
 }
