@@ -2,35 +2,26 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function BorderCountries(props) {
-    const [borderCountries, setBorders] = useState([]);
+    const [borderCountries, setBorders] = useState(null);
+    // console.log(props.borders)
     useEffect(() => {
-        //sets the border countries to the state
-        let bordersArr = []
-
-        props.borders.forEach(border => {
-                axios.get(`https://restcountries.eu/rest/v2/alpha?codes=${border}`)
-                .then(res => {
-                    bordersArr.push(res.data[0].name)
-                    console.log('res', res)
-                    setBorders(bordersArr)
-                })
-                .catch(err => {
-                    console.log('opps somthing went wrong')
-                    console.log(err)
-                })
-            
+        let promiseArray = [];
+        props.borders.forEach(borderCountryCode => {
+            let prom = axios.get(`https://restcountries.eu/rest/v2/alpha?codes=${borderCountryCode}`)
+            promiseArray.push(prom)
         })
-
-        // borderCountries.forEach(item => console.log(item.data[0].name))
+        Promise.all(promiseArray)
+            .then(res => {
+                console.log(res)
+                setBorders(res)
+            })
     }, [])
-
-    let names = ['jon', 'steve', 'billy'];
 
     return (
         <div className="border-countries-container">
             <h2>Border Countries:</h2>
             <div className="borders-countries">
-                {borderCountries ? borderCountries.map(item => item) : null }
+                {borderCountries ? borderCountries.map(item => item.data[0].name) : null }
                 {/* {names.map(item => item)} */}
             </div>
         </div>
