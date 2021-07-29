@@ -6,8 +6,9 @@ export default function BorderCountries(props) {
     useEffect(() => {
         //sets the border countries to the state
         let bordersArr = []
+
         props.borders.forEach(border => {
-            axios.get(`https://restcountries.eu/rest/v2/alpha?codes=${border}`)
+                axios.get(`https://restcountries.eu/rest/v2/alpha?codes=${border}`)
                 .then(res => {
                     bordersArr.push(res.data[0].name)
                     console.log('res', res)
@@ -17,6 +18,7 @@ export default function BorderCountries(props) {
                     console.log('opps somthing went wrong')
                     console.log(err)
                 })
+            
         })
 
         // borderCountries.forEach(item => console.log(item.data[0].name))
