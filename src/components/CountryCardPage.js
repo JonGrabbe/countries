@@ -1,9 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import leftArrowLight from '../images/left-arrow-light.svg';
 import InfoItem from "./Info-item";
 import BorderCountries from "./BorderCountries";
+import { useState, useEffect } from 'react';
+import axios from "axios";
+import {useLocation} from 'react-router-dom';
 
-export default function CountryCardPage(props) {
+function Content(props) {
     let languages = props.country.languages.map(language => language.name)
 
     return (
@@ -29,4 +32,25 @@ export default function CountryCardPage(props) {
             </div>
         </div>
     );
+}
+
+export default function CountryCardPage(props) {
+    const [countryData, setCountryData] = useState(null);
+    var location = window.location.pathname;
+    let currentDirectory = location.split('/')
+    currentDirectory = currentDirectory[currentDirectory.length-1];
+    console.log(currentDirectory)
+    useEffect(() => {
+        if(props.country) {
+            setCountryData(props.country)
+        } else {
+            setCountryData(currentDirectory)
+        }
+    }, [])
+
+
+
+    return (
+        <Content country={countryData} />
+    )
 }
