@@ -99,6 +99,9 @@ export default class App extends React.Component {
                             <Gallary countries={this.state.countriesData} />
                         </Route>
                         {routes}
+                        <Route path="/country/:id" exact >
+                            <CountryCardPage  />
+                        </Route>
                     </Switch> 
                 </div>
             </BrowserRouter>

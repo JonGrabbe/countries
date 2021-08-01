@@ -4,7 +4,7 @@ import InfoItem from "./Info-item";
 import BorderCountries from "./BorderCountries";
 import { useState, useEffect } from 'react';
 import axios from "axios";
-import {useLocation} from 'react-router-dom';
+// import {useParams} from 'react-router-dom';
 
 function Content(props) {
     let languages = props.country.languages.map(language => language.name)
@@ -36,21 +36,29 @@ function Content(props) {
 
 export default function CountryCardPage(props) {
     const [countryData, setCountryData] = useState(null);
+
     var location = window.location.pathname;
     let currentDirectory = location.split('/')
     currentDirectory = currentDirectory[currentDirectory.length-1];
-    console.log(currentDirectory)
+    console.log('current directory: ', currentDirectory)
+    console.log('props.country: ', props.country)
+
+    let { id } = useParams();
+
     useEffect(() => {
-        if(props.country) {
-            setCountryData(props.country)
-        } else {
-            setCountryData(currentDirectory)
-        }
+       axios.get('https://restcountries.eu/rest/v2/alpha/'+currentDirectory)
+        .then((res) => {
+            let countryObj = res.data;
+            console.log('contryObj: ', countryObj)
+            setCountryData(countryObj);
+        })
     }, [])
 
 
 
     return (
-        <Content country={countryData} />
+        <div>
+            <Content country={props.country !== undefined ? props.country : countryData} />
+        </div>
     )
 }
