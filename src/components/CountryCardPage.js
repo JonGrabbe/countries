@@ -1,15 +1,15 @@
-import { Link, useParams } from "react-router-dom";
+import React from "react";
+import {Link} from "react-router-dom";
 import leftArrowLight from '../images/left-arrow-light.svg';
 import InfoItem from "./Info-item";
 import BorderCountries from "./BorderCountries";
-import React, { useState, useEffect } from 'react';
 import axios from "axios";
-// import {useParams} from 'react-router-dom';
 
 function Content(props) {
     let languages = props.country.languages.map(language => language.name)
 
     return (
+
         <div className="country-card country-card-page">
             <Link to="/" className="back-button">
                 <img src={leftArrowLight} className="back-arrow" />
@@ -34,6 +34,14 @@ function Content(props) {
     );
 }
 
+
+function getCurrentDirectory() {
+    let arr = window.location.pathname.split('/');
+    let last = arr[arr.length-1];
+    console.log(last)
+    return last;
+}
+
 export default class CountryCardPage extends React.Component {
     constructor(props) {
         super(props)
@@ -42,5 +50,40 @@ export default class CountryCardPage extends React.Component {
         }
     }
 
-    
+    componentDidMount() {
+        if(this.props.country) {
+            //if there is a country object passed through props use that to render the country information
+            //if not send an api request using the 3 letter code in the url
+            this.setState({
+                countryData: this.props.country
+            })
+        } else {
+            // var location = window.location.href;
+            // console.log(location)
+            // var directoryPath = location.substring(0, location.lastIndexOf("/")+1);
+            // console.log(directoryPath)
+            // console.log(window.location.pathname.split('/'))
+
+            
+            let countryCode = getCurrentDirectory();
+            axios.get('https://restcountries.eu/rest/v2/alpha/'+countryCode)
+                .then(res => {
+                    console.log(res)
+                    this.setState({
+                        countryData: res.data
+                    })
+                })
+        }
+    }
+
+    render() {
+        if(this.state.countryData) {
+            return (
+                <Content country={this.state.countryData} />
+            )
+        } else {
+            return null
+        } 
+        
+    }
 }

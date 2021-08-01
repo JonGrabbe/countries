@@ -13,7 +13,6 @@ export default function BorderCountries(props) {
         })
         Promise.all(promiseArray)
             .then(res => {
-                console.log(res)
                 setBorders(res)
             })
     }, [])
@@ -23,7 +22,6 @@ export default function BorderCountries(props) {
             <h2>Border Countries:</h2>
             <div className="borders-countries">
                 {borderCountries ? borderCountries.map(item => <BorderCountryLink country={item.data[0]} />) : null }
-                {/* {names.map(item => item)} */}
             </div>
         </div>
     );
