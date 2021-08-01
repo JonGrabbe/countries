@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import leftArrowLight from '../images/left-arrow-light.svg';
 import InfoItem from "./Info-item";
 import BorderCountries from "./BorderCountries";
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
 // import {useParams} from 'react-router-dom';
 
@@ -34,31 +34,13 @@ function Content(props) {
     );
 }
 
-export default function CountryCardPage(props) {
-    const [countryData, setCountryData] = useState(null);
+export default class CountryCardPage extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            countryData: null
+        }
+    }
 
-    var location = window.location.pathname;
-    let currentDirectory = location.split('/')
-    currentDirectory = currentDirectory[currentDirectory.length-1];
-    console.log('current directory: ', currentDirectory)
-    console.log('props.country: ', props.country)
-
-    let { id } = useParams();
-
-    useEffect(() => {
-       axios.get('https://restcountries.eu/rest/v2/alpha/'+currentDirectory)
-        .then((res) => {
-            let countryObj = res.data;
-            console.log('contryObj: ', countryObj)
-            setCountryData(countryObj);
-        })
-    }, [])
-
-
-
-    return (
-        <div>
-            <Content country={props.country !== undefined ? props.country : countryData} />
-        </div>
-    )
+    
 }
