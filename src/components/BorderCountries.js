@@ -15,7 +15,7 @@ export default function BorderCountries(props) {
             .then(res => {
                 setBorders(res)
             })
-    }, [])
+    }, [props.borders])
 
     return (
         <div className="border-countries-container">
