@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Gallary from "./components/Gallary";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import CountryCardPage from "./components/CountryCardPage";
+import ThemeContext from "./context/theme-context";
 import './scss/main.css';
 
 export default class App extends React.Component {
@@ -12,11 +13,25 @@ export default class App extends React.Component {
         this.state = {
             countriesData: [],
             region: 'all',
-            searchTerm: ''
+            searchTerm: '',
+            theme: 'dark'
         }
         this.setSearchTerm = this.setSearchTerm.bind(this);
         this.setSearchURL = this.setSearchURL.bind(this);
         this.search = this.search.bind(this);
+        this.toggleTheme = this.toggleTheme.bind(this);
+    }
+
+    toggleTheme() {
+        let currentTheme = this.state.theme;
+        if(currentTheme === 'dark') {
+            currentTheme = 'light'
+        } else {
+          currentTheme = 'dark'  
+        }
+        this.setState({
+            theme: currentTheme
+        })
     }
 
     getCountryData(url, filter) {
@@ -92,23 +107,25 @@ export default class App extends React.Component {
 
         return(
             <BrowserRouter>
-                <div className="app">
-                    <Header 
-                        handleChangeText={this.setSearchTerm} 
-                        handleSelect={this.setSearchURL} 
-                        region={this.state.region} 
-                        search={this.search} 
-                        searchTerm={this.state.searchTerm} 
-                    />               
-                    <Switch>
-                        <Route path="/" exact>
-                            <Gallary countries={this.state.countriesData} />
-                        </Route>
-                        <Route path="/country/:id" >
-                            <CountryCardPage  />
-                        </Route>
-                    </Switch> 
-                </div>
+                <ThemeContext.Provider value={{theme: 'dark', toggleTheme: this.toggleTheme}} >
+                    <div className="app">
+                        <Header 
+                            handleChangeText={this.setSearchTerm} 
+                            handleSelect={this.setSearchURL} 
+                            region={this.state.region} 
+                            search={this.search} 
+                            searchTerm={this.state.searchTerm} 
+                        />               
+                        <Switch>
+                            <Route path="/" exact>
+                                <Gallary countries={this.state.countriesData} />
+                            </Route>
+                            <Route path="/country/:id" >
+                                <CountryCardPage  />
+                            </Route>
+                        </Switch> 
+                    </div>
+                </ThemeContext.Provider>
             </BrowserRouter>
         )
     }
