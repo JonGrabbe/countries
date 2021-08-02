@@ -1,5 +1,6 @@
 @import "country-card";
 @import "country-card-page";
+@import "../mixins/mixins";
 
 .gallary {
   width: 90%;
@@ -7,4 +8,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  @include tablet(860px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+  }
+  @include desktop {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

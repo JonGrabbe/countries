@@ -128,6 +128,8 @@ li {
   min-width: 250px;
   box-sizing: border-box;
   margin-bottom: 25px;
+  max-width: 400px;
+  margin: auto;
 }
 
 .country-card .country-info-container .info {
@@ -144,9 +146,14 @@ li {
   font-weight: 300;
 }
 
+.country-card .flag-img-container {
+  max-height: 220px;
+  overflow: hidden;
+}
+
 .country-card .flag-img-container img {
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .country-card-page {
@@ -198,5 +205,19 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media (min-width: 860px) {
+  .gallary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1330px) {
+  .gallary {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -6,6 +6,8 @@
   min-width: 250px;
   box-sizing: border-box;
   margin-bottom: 25px;
+  max-width: 400px;
+  margin: auto;
   .country-info-container {
     // padding: 30px 25px;
     .info {
@@ -21,10 +23,12 @@
     font-weight: 300;
   }
   .flag-img-container {
+    max-height: 220px;
+    overflow: hidden;
     img {
       width: 100%;
-      //   height: 125px;
-      object-fit: contain;
+      // height: 125px;
+      object-fit: cover;
     }
   }
 }
