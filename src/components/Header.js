@@ -18,7 +18,7 @@ export default function Header(props) {
             <Route path="/" exact>
                 <div className="search-controls-container">
                     <SearchInput handleChange={props.handleChangeText} handleClick={props.search} searchTerm={props.searchTerm} />
-                    <Select handleSelect={props.handleSelect} />
+                    <Select handleSelect={props.handleSelect} region={props.region} />
                 </div>
             </Route>
         </header>

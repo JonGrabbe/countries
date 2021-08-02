@@ -85,7 +85,7 @@ export default class App extends React.Component {
         this.state.countriesData.forEach(country => {
             let path = `/country/${country.alpha3Code}`;
             let route = (<Route path={path} exact >
-                <CountryCardPage country={country} />
+                <CountryCardPage  />
             </Route>);
             routes.push(route)
         })
@@ -93,13 +93,18 @@ export default class App extends React.Component {
         return(
             <BrowserRouter>
                 <div className="app">
-                    <Header handleChangeText={this.setSearchTerm} handleSelect={this.setSearchURL} search={this.search} searchTerm={this.state.searchTerm} />               
+                    <Header 
+                        handleChangeText={this.setSearchTerm} 
+                        handleSelect={this.setSearchURL} 
+                        region={this.state.region} 
+                        search={this.search} 
+                        searchTerm={this.state.searchTerm} 
+                    />               
                     <Switch>
                         <Route path="/" exact>
                             <Gallary countries={this.state.countriesData} />
                         </Route>
-                        {routes}
-                        <Route path="/country/" >
+                        <Route path="/country/:id" >
                             <CountryCardPage  />
                         </Route>
                     </Switch> 

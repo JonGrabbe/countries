@@ -1,9 +1,10 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import leftArrowLight from '../images/left-arrow-light.svg';
 import InfoItem from "./Info-item";
 import BorderCountries from "./BorderCountries";
 import axios from "axios";
+import { useEffect, useState } from "react/cjs/react.development";
 
 function Content(props) {
     let languages = props.country.languages.map(language => language.name)
@@ -42,48 +43,26 @@ function getCurrentDirectory() {
     return last;
 }
 
-export default class CountryCardPage extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            countryData: null
-        }
-    }
 
-    componentDidMount() {
-        if(this.props.country) {
-            //if there is a country object passed through props use that to render the country information
-            //if not send an api request using the 3 letter code in the url
-            this.setState({
-                countryData: this.props.country
+export default function CountryCardPage() {
+    let {id} = useParams();
+    const [country, setCountry] = useState(null);
+    useEffect(() => {
+        // let countryCode = getCurrentDirectory()
+        axios.get('https://restcountries.eu/rest/v2/alpha/'+id)
+            .then(res => {
+                console.log(res)
+                setCountry(res.data)
             })
-        } else {
-            // var location = window.location.href;
-            // console.log(location)
-            // var directoryPath = location.substring(0, location.lastIndexOf("/")+1);
-            // console.log(directoryPath)
-            // console.log(window.location.pathname.split('/'))
+    }, [id])
 
-            
-            let countryCode = getCurrentDirectory();
-            axios.get('https://restcountries.eu/rest/v2/alpha/'+countryCode)
-                .then(res => {
-                    console.log(res)
-                    this.setState({
-                        countryData: res.data
-                    })
-                })
-        }
+    if(country) {
+        return (
+            <Content country={country} />
+        )    
+    } else {
+        return null;
     }
 
-    render() {
-        if(this.state.countryData) {
-            return (
-                <Content country={this.state.countryData} />
-            )
-        } else {
-            return null
-        } 
-        
-    }
+    
 }
