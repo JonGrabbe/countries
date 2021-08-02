@@ -220,4 +220,13 @@ li {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+@media (min-width: 1875px) {
+  .gallary {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .gallary .country-card {
+    max-width: 340px;
+  }
+}
 /*# sourceMappingURL=main.css.map */

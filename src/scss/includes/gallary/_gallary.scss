@@ -16,4 +16,11 @@
   @include desktop {
     grid-template-columns: 1fr 1fr 1fr;
   }
+  //destop large
+  @include desktop(1875px) {
+    grid-template-columns: repeat(4, 1fr);
+    .country-card {
+      max-width: 340px;
+    }
+  }
 }
