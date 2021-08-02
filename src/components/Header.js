@@ -11,7 +11,7 @@ export default function Header(props) {
                 <header className="header">
                     <div className="inner-wrapper top">
                         <h1>Where in the world?</h1>
-                        <button className="theme-toggle">
+                        <button className="theme-toggle" onClick={theme.toggleTheme} >
                             {theme.theme !== 'light' ? <MoonIcon theme="light" /> : <MoonIcon theme="dark" /> }
                             {theme.theme === 'light' ? 'dark mode' : 'light mode'}
                         </button>

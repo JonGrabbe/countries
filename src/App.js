@@ -107,8 +107,8 @@ export default class App extends React.Component {
 
         return(
             <BrowserRouter>
-                <ThemeContext.Provider value={{theme: 'dark', toggleTheme: this.toggleTheme}} >
-                    <div className="app">
+                <ThemeContext.Provider value={{theme: this.state.theme, toggleTheme: this.toggleTheme}} >
+                    <div className={'app '+this.state.theme}>
                         <Header 
                             handleChangeText={this.setSearchTerm} 
                             handleSelect={this.setSearchURL} 
