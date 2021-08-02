@@ -20,9 +20,9 @@ export default function BorderCountries(props) {
     return (
         <div className="border-countries-container">
             <h2>Border Countries:</h2>
-            <div className="borders-countries">
+            <ul className="border-countries">
                 {borderCountries ? borderCountries.map(item => <BorderCountryLink country={item.data[0]} />) : null }
-            </div>
+            </ul>
         </div>
     );
 }

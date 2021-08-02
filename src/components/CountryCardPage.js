@@ -26,9 +26,11 @@ function Content(props) {
                 <h3 className="info"><span className="text"> Region: </span> {props.country.region}</h3>
                 <InfoItem category="Sub Region" value={props.country.subregion} />
                 <h3 className="info"><span className="text"> Capital: </span> {props.country.capital}</h3>
-                <InfoItem category="Top Level Domain" value={props.country.topLevelDomain[0]} />
-                <InfoItem category="Currencies" value="Euro" />
-                <InfoItem category="Languages" value={languages} />
+                <div className="info-spacer-group">
+                    <InfoItem category="Top Level Domain" value={props.country.topLevelDomain[0]} />
+                    <InfoItem category="Currencies" value="Euro" />
+                    <InfoItem category="Languages" value={languages} />
+                </div>
                 <BorderCountries borders={props.country.borders} />
             </div>
         </div>

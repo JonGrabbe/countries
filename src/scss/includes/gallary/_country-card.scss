@@ -7,10 +7,15 @@
   box-sizing: border-box;
   margin-bottom: 25px;
   .country-info-container {
-    padding: 30px 25px;
+    // padding: 30px 25px;
+    .info {
+      margin-bottom: 8px;
+    }
   }
   .name {
     font-size: 1.2rem;
+    margin-top: 30px;
+    margin-bottom: 20px;
   }
   .info {
     font-weight: 300;
