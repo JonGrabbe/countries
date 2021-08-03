@@ -28,6 +28,7 @@
 .search-container {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   .text-input {
     background-color: $dark-mode-elements-color;
     border: none;

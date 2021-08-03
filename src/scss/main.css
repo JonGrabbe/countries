@@ -87,6 +87,7 @@ li {
 .search-container {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
 
 .search-container .text-input {
