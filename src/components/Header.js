@@ -8,8 +8,8 @@ export default function Header(props) {
     return (
         <ThemeContext.Consumer>
             {theme => (
-                <header className="header">
-                    <div className="inner-wrapper top">
+                <header className="header theme-background">
+                    <div className="inner-wrapper top theme-element">
                         <h1>Where in the world?</h1>
                         <button className="theme-toggle" onClick={theme.toggleTheme} >
                             {theme.theme !== 'light' ? <MoonIcon theme="light" /> : <MoonIcon theme="dark" /> }

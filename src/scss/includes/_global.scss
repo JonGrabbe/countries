@@ -8,16 +8,6 @@ $dark-mode-elements-color: hsl(209, 23%, 22%);
 $dark-mode-text-color: hsl(0, 0%, 100%);
 //dark mode is defualt
 
-.app.light {
-  .header {
-    .top {
-      background-color: white;
-    }
-    background-color: lightgrey;
-    color: black;
-  }
-}
-
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap");
 
 html {

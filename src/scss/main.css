@@ -1,13 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap");
-.app.light .header {
-  background-color: lightgrey;
-  color: black;
-}
-
-.app.light .header .top {
-  background-color: white;
-}
-
 html {
   font-size: 16px;
   font-family: "Nunito Sans", sans-serif;
@@ -237,5 +228,23 @@ li {
   .gallary .country-card {
     max-width: 340px;
   }
+}
+
+.app.light {
+  color: black;
+}
+
+.app.light .theme-element {
+  background-color: white;
+  color: black;
+  box-shadow: 1px 6px 16px 2px #e3e4eb;
+}
+
+.app.light .theme-background {
+  background-color: #fafafa;
+}
+
+.app.light.theme-background {
+  background-color: #fafafa;
 }
 /*# sourceMappingURL=main.css.map */
