@@ -88,19 +88,41 @@ li {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  background-color: #2b3945;
+  padding: 5px;
 }
 
 .search-container .text-input {
-  background-color: #2b3945;
+  background-color: inherit;
   border: none;
   padding: 10px;
   border-radius: 5px;
   color: white;
   flex-grow: 3;
+  color: white;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 .search-container button {
   flex-grow: 1;
+}
+
+.search-container .search-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0 5px;
+}
+
+.search-container .search-button::placeholder {
+  color: white;
+}
+
+.search-container .search-button img {
+  width: 20px;
 }
 
 @media (min-width: 362px) {
