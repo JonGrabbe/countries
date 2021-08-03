@@ -239,21 +239,21 @@ li {
   }
 }
 
-html.light {
+.light {
   color: black;
 }
 
-html.light .theme-element {
+.light .theme-element {
   background-color: white;
   color: black;
   box-shadow: 1px 6px 16px 2px #e3e4eb;
 }
 
-html.light .theme-background {
+.light .theme-background {
   background-color: #fafafa;
 }
 
-html.light.theme-background {
+.light.theme-background {
   background-color: #fafafa;
 }
 /*# sourceMappingURL=main.css.map */

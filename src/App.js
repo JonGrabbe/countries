@@ -23,12 +23,23 @@ export default class App extends React.Component {
     }
 
     toggleTheme() {
+        let elm = document.getElementById('theme-toggle');
+        function setTheme(theme) {
+            let themes = ['dark', 'light'];
+            elm.classList.forEach(themeName => {
+                if(themes.includes(themeName)) {
+                    elm.classList.remove(themeName)
+                }
+            })
+            elm.classList.add(theme)
+        }
         let currentTheme = this.state.theme;
         if(currentTheme === 'dark') {
             currentTheme = 'light'
         } else {
           currentTheme = 'dark'  
         }
+        setTheme(currentTheme)
         this.setState({
             theme: currentTheme
         })
