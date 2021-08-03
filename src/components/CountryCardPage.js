@@ -1,6 +1,7 @@
 import React from "react";
 import {Link, useParams} from "react-router-dom";
 import leftArrowLight from '../images/left-arrow-light.svg';
+import leftArrowDark from '../images/left-arrow-dark.svg';
 import InfoItem from "./Info-item";
 import BorderCountries from "./BorderCountries";
 import axios from "axios";
@@ -16,7 +17,7 @@ function Content(props) {
                 themeValue => (
                     <div className="country-card country-card-page">
                     <Link to="/" className="back-button theme-element">
-                        <img src={leftArrowLight} className="back-arrow" />
+                        <img src={themeValue.theme === 'light' ? leftArrowDark : leftArrowLight} className="back-arrow" />
                         Back
                     </Link>
                     <div className="flag-img-container">

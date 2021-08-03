@@ -121,6 +121,10 @@ li {
   }
 }
 
+.country-card-link {
+  margin-top: 30px;
+}
+
 .country-card {
   background-color: #2b3945;
   padding-top: 0;
@@ -130,6 +134,11 @@ li {
   margin-bottom: 25px;
   max-width: 400px;
   margin: auto;
+  padding-bottom: 44px;
+}
+
+.country-card .country-info-container {
+  padding-left: 24px;
 }
 
 .country-card .country-info-container .info {

@@ -3,8 +3,8 @@ import {Link} from 'react-router-dom';
 export default function CountryCard(props) {
     let hrefVal = `/country/${props.href}`;
     return (
-        <Link to={hrefVal} >
-            <article className="country-card">
+        <Link to={hrefVal} className="country-card-link" >
+            <article className="country-card theme-element">
                 <div className="flag-img-container">
                     <img src={props.country.flag} />
                 </div>

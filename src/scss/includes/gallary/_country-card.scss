@@ -1,3 +1,6 @@
+.country-card-link {
+  margin-top: 30px;
+}
 .country-card {
   background-color: $dark-mode-elements-color;
   //   padding-bottom: 2.5rem;
@@ -8,8 +11,9 @@
   margin-bottom: 25px;
   max-width: 400px;
   margin: auto;
+  padding-bottom: 44px;
   .country-info-container {
-    // padding: 30px 25px;
+    padding-left: 24px;
     .info {
       margin-bottom: 8px;
     }
