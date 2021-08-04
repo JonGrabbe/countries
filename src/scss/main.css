@@ -8,6 +8,7 @@ body {
   margin: 0;
   background-color: #202c37;
   color: white;
+  margin-bottom: 50px;
 }
 
 h1,
@@ -65,6 +66,7 @@ li {
 
 .header .top {
   background-color: #2b3945;
+  margin-bottom: 15px;
 }
 
 .theme-toggle {
@@ -97,16 +99,11 @@ li {
   border: none;
   padding: 10px;
   border-radius: 5px;
-  color: white;
+  color: inherit;
   flex-grow: 3;
-  color: white;
   font-family: inherit;
   font-weight: bold;
   font-size: 1rem;
-}
-
-.search-container button {
-  flex-grow: 1;
 }
 
 .search-container .search-button {
@@ -115,6 +112,7 @@ li {
   align-items: center;
   margin: 0;
   padding: 0 5px;
+  background-color: initial;
 }
 
 .search-container .search-button::placeholder {
@@ -191,6 +189,10 @@ li {
 .country-card-page {
   background-color: inherit;
   padding: 0 20px;
+}
+
+.country-card-page .country-info-container {
+  padding-left: 0;
 }
 
 .back-button {

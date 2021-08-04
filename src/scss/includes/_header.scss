@@ -3,8 +3,12 @@
     display: flex;
     justify-content: space-between;
   }
+  .logo-text {
+    // font-size: 1.5rem;
+  }
   .top {
     background-color: $dark-mode-elements-color;
+    margin-bottom: 15px;
   }
   background-color: map-get($dark-mode-colors, "background");
   color: map-get($dark-mode-colors, "text");
@@ -36,15 +40,11 @@
     border: none;
     padding: 10px;
     border-radius: 5px;
-    color: $dark-mode-text-color;
+    color: inherit;
     flex-grow: 3;
-    color: white;
     font-family: inherit;
     font-weight: bold;
     font-size: 1rem;
-  }
-  button {
-    flex-grow: 1;
   }
   .search-button {
     display: flex;
@@ -52,6 +52,7 @@
     align-items: center;
     margin: 0;
     padding: 0 5px;
+    background-color: initial;
     &::placeholder {
       color: white;
     }
