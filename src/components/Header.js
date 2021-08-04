@@ -29,7 +29,7 @@ export default function Header(props) {
                 searchTerm={props.searchTerm}
               />
               <Select handleSelect={props.handleSelect} region={props.region} />
-              <CustomSelect />
+              <CustomSelect title="search by region" />
             </div>
           </Route>
         </header>

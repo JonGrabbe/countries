@@ -1,11 +1,12 @@
 import React from "react";
-import "./styles.css";
 
 function SelectOptions(props) {
   return (
     <ul className="select-options">
       {props.lis.map((item) => (
-        <li value={item}>{item}</li>
+        <li className="options" value={item}>
+          {item}
+        </li>
       ))}
     </ul>
   );
@@ -21,7 +22,7 @@ export default function CustomSelect(props) {
           ? props.options.map((item) => <option value={item}>{item}</option>)
           : null}
       </select>
-      <div className="select-styled"></div>
+      <div className="select-styled theme-element">{props.title}</div>
       <SelectOptions lis={options} />
     </div>
   );

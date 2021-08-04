@@ -281,4 +281,18 @@ li {
 .light.theme-background {
   background-color: #fafafa;
 }
+
+.select .select-hidden {
+  display: none;
+}
+
+.select .select-styled,
+.select .options {
+  padding: 12px 10px;
+  background-color: #2b3945;
+}
+
+.select .select-options {
+  display: none;
+}
 /*# sourceMappingURL=main.css.map */
