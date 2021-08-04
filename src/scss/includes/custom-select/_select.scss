@@ -1,14 +1,5 @@
-.select {
-  .select-hidden {
-    display: none;
-  }
-  .select-styled,
-  .options {
-    //title
-    padding: 12px 10px;
-    background-color: $dark-mode-elements-color;
-  }
-  .select-options {
+.select-container {
+  input {
     display: none;
   }
 }

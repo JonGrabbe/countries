@@ -282,17 +282,7 @@ li {
   background-color: #fafafa;
 }
 
-.select .select-hidden {
-  display: none;
-}
-
-.select .select-styled,
-.select .options {
-  padding: 12px 10px;
-  background-color: #2b3945;
-}
-
-.select .select-options {
+.select-container input {
   display: none;
 }
 /*# sourceMappingURL=main.css.map */

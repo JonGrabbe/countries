@@ -68,6 +68,7 @@ export default class App extends React.Component {
     setSearchURL(e) {
         //sets the endpoint based on what option was chosen by the user from the select element
         let val = e.currentTarget.value;
+        console.log(val)
         this.setState(() => {
             return {
                 region: val

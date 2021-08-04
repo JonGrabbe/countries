@@ -6,6 +6,14 @@ import ThemeContext from "../context/theme-context";
 import CustomSelect from "./custom-select/Select";
 
 export default function Header(props) {
+  const menuValues = [
+    "Africa",
+    "Europe",
+    "Americas",
+    'Asia',
+    "Oceania",
+    "All"
+  ];
   return (
     <ThemeContext.Consumer>
       {(theme) => (
@@ -29,7 +37,7 @@ export default function Header(props) {
                 searchTerm={props.searchTerm}
               />
               <Select handleSelect={props.handleSelect} region={props.region} />
-              <CustomSelect title="search by region" />
+              <CustomSelect  />
             </div>
           </Route>
         </header>
