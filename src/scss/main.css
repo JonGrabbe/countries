@@ -192,7 +192,8 @@ body.dark .theme-list-item-active {
 
 .country-card-page {
   background-color: inherit;
-  padding: 0 20px;
+  padding: 25px 0;
+  max-width: 350px;
 }
 
 .country-card-page .country-info-container {
@@ -202,7 +203,7 @@ body.dark .theme-list-item-active {
 .country-card-page .flag-img-container {
   height: initial;
   overflow: initial;
-  max-width: 450px;
+  max-width: 520px;
 }
 
 .back-button {
@@ -246,24 +247,34 @@ body.dark .theme-list-item-active {
 @media (min-width: 640px) {
   .country-card-page .country-info-container {
     display: grid;
-    grid-template-areas: "info1 info2" "border border";
+    grid-template-areas: "name name" "info1 info2" "border border";
     max-width: 550px;
   }
-  .country-card-page .info-group:first-child {
+  .country-card-page .country-info-container .info-spacer-group {
+    margin-top: 0;
+  }
+  .country-card-page .country-info-container .name {
+    grid-area: name;
+  }
+  .country-card-page .country-info-container .info-group:first-child {
     grid-area: info1;
   }
-  .country-card-page .info-group:last-child {
+  .country-card-page .country-info-container .info-group:last-child {
     grid-area: info2;
   }
-  .country-card-page .border-countries-container {
+  .country-card-page .country-info-container .border-countries-container {
     grid-area: border;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 950px) {
   .country-card-page {
     display: grid;
     grid-template-areas: "backButton backButton" "flag info";
+    position: relative;
+    padding-bottom: 150px;
+    max-width: 1100px;
+    margin: auto;
   }
   .country-card-page .back-buttton-container {
     grid-area: backButton;
@@ -273,6 +284,17 @@ body.dark .theme-list-item-active {
   }
   .country-card-page .country-info-container {
     grid-area: info;
+    padding: 25px;
+    align-self: start;
+  }
+  .country-card-page .country-info-container .border-countries-container {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+  }
+  .country-card-page .country-info-container .name {
+    margin-top: 0;
+    font-size: 1.8rem;
   }
 }
 
