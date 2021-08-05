@@ -17,11 +17,11 @@ function Content(props) {
                 themeValue => (
                     <div className="country-card country-card-page">
                     <Link to="/" className="back-button theme-element">
-                        <img src={themeValue.theme === 'light' ? leftArrowDark : leftArrowLight} className="back-arrow" />
+                        <img src={themeValue.theme === 'light' ? leftArrowDark : leftArrowLight} className="back-arrow" alt="" />
                         Back
                     </Link>
                     <div className="flag-img-container">
-                        <img src={props.country.flag} />
+                        <img src={props.country.flag} alt="" />
                     </div>
                     <div className="country-info-container">
                         <h2 className="name">{props.country.name}</h2>

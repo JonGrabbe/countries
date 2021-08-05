@@ -1,5 +1,18 @@
 .select-container {
+  margin-top: 25px;
   input {
     display: none;
   }
+  .select-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: $dark-mode-elements-color;
+    border-radius: 5px;
+    .arrow {
+      width: 15px;
+    }
+  }
+  
 }

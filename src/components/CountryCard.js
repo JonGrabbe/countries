@@ -6,7 +6,7 @@ export default function CountryCard(props) {
         <Link to={hrefVal} className="country-card-link" >
             <article className="country-card theme-element">
                 <div className="flag-img-container">
-                    <img src={props.country.flag} />
+                    <img src={props.country.flag} alt="" />
                 </div>
                 <div className="country-info-container">
                     <h2 className="name">{props.country.name}</h2>

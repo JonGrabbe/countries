@@ -282,7 +282,24 @@ li {
   background-color: #fafafa;
 }
 
+.select-container {
+  margin-top: 25px;
+}
+
 .select-container input {
   display: none;
+}
+
+.select-container .select-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #2b3945;
+  border-radius: 5px;
+}
+
+.select-container .select-title .arrow {
+  width: 15px;
 }
 /*# sourceMappingURL=main.css.map */
