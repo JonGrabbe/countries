@@ -1,5 +1,5 @@
 - (done) set title to change depending on the page
-- have search results reported to the user in case no results were returned or there was an error
+- (done) have search results reported to the user in case no results were returned or there was an error
 - desktop and tablet version
 - (done) press enter to search
 - (done) custom select dropdown

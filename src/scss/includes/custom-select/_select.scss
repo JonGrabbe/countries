@@ -21,6 +21,7 @@
     border-radius: 5px;
     margin-bottom: 5px;
     .arrow {
+      transition: transform .2s linear;
       width: 15px;
     }
   }
@@ -28,7 +29,10 @@
     padding-left: 25px;
     padding-top: 10px;
     padding-bottom: 20px;
-    transition: max-height .3s linear;
+    // transition: max-height .3s linear;
+    transition-property: max-height, padding;
+    transition-duration: .2s;
+    transition-timing-function: linear;
     overflow: hidden;
     max-height: 350px;
     .list-item {
@@ -58,9 +62,15 @@
       padding-bottom: 0;
       max-height: 0;
     }
+    .select-title {
+      .arrow {
+        transform: rotate(-180deg)
+      }
+    }
   }
 
   //menu opened
   &.opened {
+    
   }
 }
