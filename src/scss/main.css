@@ -345,6 +345,7 @@ body.dark .theme-list-item-active {
 
 .select-container .select-list-container .list-item.active {
   background-color: red;
+  color: white;
   transition: all .3s ease-in;
 }
 

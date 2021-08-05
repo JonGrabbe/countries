@@ -41,6 +41,7 @@
       }
       &.active {
         background-color: red;
+        color: white;
         // @extend .theme-list-item-active;
         transition: all .3s ease-in;
       }

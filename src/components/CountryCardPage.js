@@ -9,9 +9,9 @@ import { useEffect, useState } from "react/cjs/react.development";
 import ThemeContext from "../context/theme-context";
 
 function Content(props) {
-    let languages = props.country.languages.map(language => language.name)
+    let languages = props.country.languages.map(language => language.name);
 
-    document.title = 'countries api | country'
+    document.title = props.country.name;
 
     return (
         <ThemeContext.Consumer>
