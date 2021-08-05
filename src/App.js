@@ -14,7 +14,8 @@ export default class App extends React.Component {
             countriesData: [],
             region: 'all',
             searchTerm: '',
-            theme: 'dark'
+            theme: 'dark',
+            errorMsg: null,
         }
         this.setSearchTerm = this.setSearchTerm.bind(this);
         this.setSearchURL = this.setSearchURL.bind(this);
@@ -52,16 +53,22 @@ export default class App extends React.Component {
                 if(filter) {
                     console.log('filter works')
                     this.setState({
-                        countriesData: filter(res.data)
+                        countriesData: filter(res.data),
+                        errorMsg: null
                     })
                     return;
                 }
                 this.setState({
-                    countriesData: res.data
+                    countriesData: res.data,
+                    errorMsg: null
                 })
             })
             .catch(err => {
                 console.log(err)
+                console.log(err)
+                this.setState({
+                    errorMsg: 'somthing went wrong'
+                })
             })
     }
 
@@ -130,9 +137,9 @@ export default class App extends React.Component {
                         />               
                         <Switch>
                             <Route path="/" exact>
-                                <Gallary countries={this.state.countriesData} />
+                                <Gallary countries={this.state.countriesData} error={this.state.errorMsg} />
                             </Route>
-                            <Route path="/country/:id" >
+                            <Route path="/country/:id">
                                 <CountryCardPage  />
                             </Route>
                         </Switch> 

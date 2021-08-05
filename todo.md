@@ -1,7 +1,7 @@
 - (done) set title to change depending on the page
 - have search results reported to the user in case no results were returned or there was an error
 - desktop and tablet version
-- press enter to search
+- (done) press enter to search
 - (done) custom select dropdown
 - have all the country cards be the same shape and size (no unevenness)
 - have large numbers be seperated by commas (1000000 = 1,000,000)
