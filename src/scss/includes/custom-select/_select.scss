@@ -40,9 +40,9 @@
         cursor: pointer;
       }
       &.active {
-        @extend .theme-list-item-active;
+        background-color: red;
+        // @extend .theme-list-item-active;
         transition: all .3s ease-in;
-        // animation: activeListItem .3s linear;
       }
       &:last-child {
         margin-bottom: 0;

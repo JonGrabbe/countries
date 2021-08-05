@@ -11,6 +11,8 @@ import ThemeContext from "../context/theme-context";
 function Content(props) {
     let languages = props.country.languages.map(language => language.name)
 
+    document.title = 'countries api | country'
+
     return (
         <ThemeContext.Consumer>
             {

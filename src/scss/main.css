@@ -58,7 +58,7 @@ body.dark .theme-element {
   background-color: #2b3945;
 }
 
-body.dark .theme-list-item-active, body.dark .select-container .select-list-container .list-item.active, .select-container .select-list-container body.dark .list-item.active {
+body.dark .theme-list-item-active {
   background-color: red;
 }
 
@@ -290,6 +290,10 @@ body.dark .theme-list-item-active, body.dark .select-container .select-list-cont
   background-color: #fafafa;
 }
 
+.light .theme-list-item-active {
+  background-color: lightblue;
+}
+
 @keyframes activeListItem {
   0% {
     background-color: initial;
@@ -340,6 +344,7 @@ body.dark .theme-list-item-active, body.dark .select-container .select-list-cont
 }
 
 .select-container .select-list-container .list-item.active {
+  background-color: red;
   transition: all .3s ease-in;
 }
 
