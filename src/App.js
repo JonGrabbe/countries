@@ -50,24 +50,34 @@ export default class App extends React.Component {
         //fills the state with an array of objects from the url provided
         axios.get(url)
             .then(res => {
-                if(filter) {
+                /* if(filter) {
                     console.log('filter works')
                     this.setState({
                         countriesData: filter(res.data),
                         errorMsg: null
                     })
                     return;
-                }
-                this.setState({
-                    countriesData: res.data,
-                    errorMsg: null
-                })
+                } */
+                    let countryData = filter ? filter(res.data) : res.data;
+                    console.log('country data!: ', countryData, countryData.length)
+                    let errorMsg = null;
+                    if(countryData.length === 0) {
+                        errorMsg = 'country not found in region'
+                    }
+                    this.setState({
+                        countriesData: countryData,
+                        errorMsg: errorMsg,
+                    })
+                    
             })
             .catch(err => {
-                console.log(err)
-                console.log(err)
+                console.log(err, err.name, err.message, err.number, err.response)
+                let errMsg = 'somthing went wrong';
+                if(err.response.status === 404) {
+                    errMsg = 'country not found anywhere'
+                }
                 this.setState({
-                    errorMsg: 'somthing went wrong'
+                    errorMsg: errMsg
                 })
             })
     }
