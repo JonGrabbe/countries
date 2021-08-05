@@ -5,8 +5,12 @@ import React, {useState} from 'react';
 
 
 function ListItem(props) {
+  // false means there is no active class on the label
+  const [isActive, setIsActive] = useState(false);
+  let classVal = isActive ? 'list-item active' : 'list-item';
+  console.log(classVal)
   return (
-    <li className="list-item">
+    <li className={classVal} >
       <input 
         id={props.value} 
         type="radio" 
@@ -15,7 +19,7 @@ function ListItem(props) {
         className="radio"
         onChange={props.handleChange}
       />
-      <label htmlFor={props.value}>{props.value}</label>
+      <label className="label" htmlFor={props.value} onClick={() => setIsActive(!isActive)} >{props.value}</label>
     </li>
   );
 }

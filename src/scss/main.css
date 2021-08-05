@@ -58,6 +58,10 @@ body.dark .theme-element {
   background-color: #2b3945;
 }
 
+body.dark .theme-list-item-active, body.dark .select-container .select-list-container .list-item.active, .select-container .select-list-container body.dark .list-item.active {
+  background-color: red;
+}
+
 .header {
   background-color: #202c37;
   color: white;
@@ -318,6 +322,16 @@ body.dark .theme-element {
 
 .select-container .select-list-container .list-item {
   margin-bottom: 8px;
+}
+
+.select-container .select-list-container .list-item label {
+  width: 100%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.select-container .select-list-container .list-item.active {
+  transition: all .3s ease-in;
 }
 
 .select-container .select-list-container .list-item:last-child {

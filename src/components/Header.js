@@ -12,7 +12,7 @@ export default function Header(props) {
     "Americas",
     'Asia',
     "Oceania",
-    "All"
+    "all"
   ];
   return (
     <ThemeContext.Consumer>

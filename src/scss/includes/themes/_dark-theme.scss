@@ -1,5 +1,10 @@
+$dark-mode-list-item-active: red;
+
 body.dark {
     .theme-element {
         background-color: $dark-mode-elements-color;
+    }
+    .theme-list-item-active {
+        background-color: $dark-mode-list-item-active;
     }    
 }

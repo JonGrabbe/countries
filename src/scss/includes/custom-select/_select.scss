@@ -1,3 +1,4 @@
+//list item selected animation
 
 
 .select-container {
@@ -26,8 +27,14 @@
     .list-item {
       margin-bottom: 8px;
       //list item selected
-      &.selected {
-        
+      label {
+        width: 100%;
+        display: inline-block;
+        cursor: pointer;
+      }
+      &.active {
+        @extend .theme-list-item-active;
+        transition: all .3s ease-in;
       }
       &:last-child {
         margin-bottom: 0;
