@@ -5,12 +5,10 @@ import React, {useState} from 'react';
 
 
 function ListItem(props) {
-  // false means there is no active class on the label
-  const [isActive, setIsActive] = useState(false);
-  let classVal = isActive ? 'list-item active' : 'list-item';
-  console.log(classVal)
+  // let baseClassName = 'list-item'
+  let classVal = props.region === props.value ? ' active' : '';
   return (
-    <li className={classVal} >
+    <li className={"list-item"+classVal}>
       <input 
         id={props.value} 
         type="radio" 
@@ -19,7 +17,7 @@ function ListItem(props) {
         className="radio"
         onChange={props.handleChange}
       />
-      <label className="label" htmlFor={props.value} onClick={() => setIsActive(!isActive)} >{props.value}</label>
+      <label className="label" htmlFor={props.value}>{props.value}</label>
     </li>
   );
 }
@@ -42,7 +40,7 @@ export default function CustomSelect(props) {
             <ul className="select-list-container theme-element">
               {
                 props.lis.map(item => (
-                  <ListItem value={item} handleChange={props.handleChange} />
+                  <ListItem value={item} handleChange={props.handleChange} region={props.region} />
                 ))
               }
             </ul>
