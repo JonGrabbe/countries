@@ -147,6 +147,12 @@ body.dark .theme-list-item-active {
   width: 20px;
 }
 
+@media (min-width: 560px) {
+  .logo-text {
+    font-size: 1.3rem;
+  }
+}
+
 .country-card-link {
   margin-top: 30px;
   box-sizing: border-box;

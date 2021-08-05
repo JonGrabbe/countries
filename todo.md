@@ -5,6 +5,7 @@
 - (done) custom select dropdown
 - have all the country cards be the same shape and size (no unevenness)
 - have large numbers be seperated by commas (1000000 = 1,000,000)
+- have search all button
 
 - optional
   - display number of items returned

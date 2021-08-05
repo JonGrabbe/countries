@@ -25,7 +25,7 @@ function ListItem(props) {
 export default function CustomSelect(props) {
   // false means that the menu is closed
   const [menuOpened, setMenuOpened] = useState(false);
-  let menuClassName = menuOpened ? 'select-container closed' : 'select-container';
+  let menuClassName = menuOpened ? 'select-container' : 'select-container closed';
 
 
   return (
