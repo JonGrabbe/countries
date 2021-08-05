@@ -1,6 +1,8 @@
 import downArrowDarkTheme from '../../images/arrow-down-dark-theme.svg';
 import downArrowLightTheme from '../../images/arrow-down-light-theme.svg';
 import ThemeContext from '../../context/theme-context';
+import React, {useState} from 'react';
+
 
 function ListItem(props) {
   return (
@@ -19,12 +21,16 @@ function ListItem(props) {
 }
 
 export default function CustomSelect(props) {
+  // false means that the menu is closed
+  const [menuOpened, setMenuOpened] = useState(false);
+  let menuClassName = menuOpened ? 'select-container closed' : 'select-container';
+  
   return (
     <ThemeContext.Consumer>
       {
         themeValue => (
-          <div className="select-container closed">
-            <div className="select-title theme-element">
+          <div className={menuClassName}>
+            <div className="select-title theme-element" onClick={() => setMenuOpened(!menuOpened)} >
               <span class="title">Filter by Region</span>
               <img src={themeValue.theme === 'dark' ? downArrowDarkTheme : downArrowLightTheme} className="arrow" alt="" />
             </div>

@@ -37,7 +37,7 @@ export default function Header(props) {
                 searchTerm={props.searchTerm}
               />
               {/* <Select handleSelect={props.handleSelect} region={props.region} /> */}
-              <CustomSelect lis={menuValues} handleChange={props.handleSelect} />
+              <CustomSelect region={props.region} lis={menuValues} handleChange={props.handleSelect} />
             </div>
           </Route>
         </header>

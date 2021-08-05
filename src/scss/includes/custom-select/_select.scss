@@ -20,22 +20,24 @@
     padding-left: 25px;
     padding-top: 10px;
     padding-bottom: 20px;
-    transition: all .3s linear;
+    transition: max-height .3s linear;
     overflow: hidden;
     max-height: 350px;
     .list-item {
       margin-bottom: 8px;
+      //list item selected
+      
       &:last-child {
         margin-bottom: 0;
       }
     }
   }
-  
 
   //menu closed
   &.closed {
     .select-list-container {
-      padding: 0;
+      padding-top: 0;
+      padding-bottom: 0;
       max-height: 0;
     }
   }
