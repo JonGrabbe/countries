@@ -290,6 +290,15 @@ body.dark .theme-list-item-active, body.dark .select-container .select-list-cont
   background-color: #fafafa;
 }
 
+@keyframes activeListItem {
+  0% {
+    background-color: initial;
+  }
+  100% {
+    background-color: inherit;
+  }
+}
+
 .select-container {
   margin-top: 25px;
 }
