@@ -10,6 +10,9 @@
 
 .select-container {
   margin-top: 25px;
+  max-width: 400px;
+  min-width: 250px;
+  // margin: auto;
   input {
     display: none;
   }
