@@ -24,14 +24,15 @@ export default function CustomSelect(props) {
   // false means that the menu is closed
   const [menuOpened, setMenuOpened] = useState(false);
   let menuClassName = menuOpened ? 'select-container closed' : 'select-container';
-  
+
+
   return (
     <ThemeContext.Consumer>
       {
         themeValue => (
           <div className={menuClassName}>
             <div className="select-title theme-element" onClick={() => setMenuOpened(!menuOpened)} >
-              <span class="title">Filter by Region</span>
+              <span class="title">Filter by Region: {props.region}</span>
               <img src={themeValue.theme === 'dark' ? downArrowDarkTheme : downArrowLightTheme} className="arrow" alt="" />
             </div>
             <ul className="select-list-container theme-element">
