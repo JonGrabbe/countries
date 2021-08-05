@@ -58,3 +58,21 @@ li {
   border-radius: 3px;
   padding: 6px 12px;
 }
+
+.content-width-wrapper {
+  width: 90%;
+  max-width: 1550px;
+  margin: auto;
+}
+
+@media(min-width: 530px) {
+  .content-width-wrapper {
+    width: 96%;
+  }
+}
+
+@media(min-width: 840px) {
+  .content-width-wrapper {
+    width: 90%;
+  }
+}

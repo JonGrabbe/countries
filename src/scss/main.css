@@ -54,6 +54,24 @@ li {
   padding: 6px 12px;
 }
 
+.content-width-wrapper {
+  width: 90%;
+  max-width: 1550px;
+  margin: auto;
+}
+
+@media (min-width: 530px) {
+  .content-width-wrapper {
+    width: 96%;
+  }
+}
+
+@media (min-width: 840px) {
+  .content-width-wrapper {
+    width: 90%;
+  }
+}
+
 body.dark .theme-element {
   background-color: #2b3945;
 }
@@ -90,8 +108,6 @@ body.dark .theme-list-item-active {
 .search-controls-container {
   padding-top: 20px;
   padding-bottom: 20px;
-  width: 90%;
-  margin: auto;
 }
 
 .search-container {
@@ -133,6 +149,7 @@ body.dark .theme-list-item-active {
 
 .country-card-link {
   margin-top: 30px;
+  box-sizing: border-box;
 }
 
 .country-card {
@@ -142,8 +159,6 @@ body.dark .theme-list-item-active {
   min-width: 250px;
   box-sizing: border-box;
   margin-bottom: 25px;
-  max-width: 400px;
-  margin: auto;
   padding-bottom: 44px;
 }
 
@@ -166,7 +181,7 @@ body.dark .theme-list-item-active {
 }
 
 .country-card .flag-img-container {
-  max-height: 220px;
+  height: 220px;
   overflow: hidden;
 }
 
@@ -223,34 +238,28 @@ body.dark .theme-list-item-active {
 }
 
 .gallary {
-  width: 90%;
-  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  grid-gap: 15px;
 }
 
-@media (min-width: 850px) {
+@media (min-width: 530px) {
   .gallary {
-    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-content: center;
   }
 }
 
-@media (min-width: 1330px) {
+@media (min-width: 930px) {
   .gallary {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-@media (min-width: 1875px) {
+@media (min-width: 1500px) {
   .gallary {
     grid-template-columns: repeat(4, 1fr);
-  }
-  .gallary .country-card {
-    max-width: 340px;
   }
 }
 

@@ -1,5 +1,9 @@
 .country-card-link {
   margin-top: 30px;
+  // max-width: 350px;
+  // padding: 15px;
+  // height: 220px;
+  box-sizing: border-box;
 }
 .country-card {
   background-color: $dark-mode-elements-color;
@@ -9,8 +13,8 @@
   min-width: 250px;
   box-sizing: border-box;
   margin-bottom: 25px;
-  max-width: 400px;
-  margin: auto;
+  // max-width: 400px;
+  // margin: auto;
   padding-bottom: 44px;
   .country-info-container {
     padding-left: 24px;
@@ -27,7 +31,7 @@
     font-weight: 300;
   }
   .flag-img-container {
-    max-height: 220px;
+    height: 220px;
     overflow: hidden;
     img {
       width: 100%;

@@ -7,7 +7,7 @@ export default function Gallary(props) {
         return props.error
     }
     return (
-        <section className="gallary">
+        <section className="gallary content-width-wrapper">
                 {props.countries.map(country => <CountryCard country={country} href={country.alpha3Code} />)}
         </section>
     );

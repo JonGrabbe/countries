@@ -30,7 +30,7 @@ export default function Header(props) {
             </button>
           </div>
           <Route path="/" exact>
-            <div className="search-controls-container">
+            <div className="search-controls-container content-width-wrapper">
               <SearchInput
                 handleChange={props.handleChangeText}
                 handleClick={props.search}
