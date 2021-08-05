@@ -199,6 +199,12 @@ body.dark .theme-list-item-active {
   padding-left: 0;
 }
 
+.country-card-page .flag-img-container {
+  height: initial;
+  overflow: initial;
+  max-width: 450px;
+}
+
 .back-button {
   display: flex;
   justify-content: center;
@@ -235,6 +241,39 @@ body.dark .theme-list-item-active {
 .border-country-item {
   display: inline-block;
   margin-top: 5px;
+}
+
+@media (min-width: 640px) {
+  .country-card-page .country-info-container {
+    display: grid;
+    grid-template-areas: "info1 info2" "border border";
+    max-width: 550px;
+  }
+  .country-card-page .info-group:first-child {
+    grid-area: info1;
+  }
+  .country-card-page .info-group:last-child {
+    grid-area: info2;
+  }
+  .country-card-page .border-countries-container {
+    grid-area: border;
+  }
+}
+
+@media (min-width: 1200px) {
+  .country-card-page {
+    display: grid;
+    grid-template-areas: "backButton backButton" "flag info";
+  }
+  .country-card-page .back-buttton-container {
+    grid-area: backButton;
+  }
+  .country-card-page .flag-img-container {
+    grid-area: flag;
+  }
+  .country-card-page .country-info-container {
+    grid-area: info;
+  }
 }
 
 .gallary {
