@@ -7,6 +7,7 @@ import BorderCountries from "./BorderCountries";
 import axios from "axios";
 import { useEffect, useState } from "react/cjs/react.development";
 import ThemeContext from "../context/theme-context";
+import numberWithCommas from "../functions/numbers";
 
 function Content(props) {
     let languages = props.country.languages.map(language => language.name);
@@ -31,7 +32,7 @@ function Content(props) {
                         <h2 className="name">{props.country.name}</h2>
                         <div className="info-group">
                             <InfoItem category="Native Name" value={props.country.nativeName} />
-                            <h3 className="info"> <span className="text"> Population: </span> {props.country.population}</h3>
+                            <h3 className="info"> <span className="text"> Population: </span> {numberWithCommas(props.country.population)}</h3>
                             <h3 className="info"><span className="text"> Region: </span> {props.country.region}</h3>
                             <InfoItem category="Sub Region" value={props.country.subregion} />
                             <h3 className="info"><span className="text"> Capital: </span> {props.country.capital}</h3>
