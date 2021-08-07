@@ -62,7 +62,7 @@ export default class App extends React.Component {
                     console.log('country data!: ', countryData, countryData.length)
                     let errorMsg = null;
                     if(countryData.length === 0) {
-                        errorMsg = 'country not found in region'
+                        errorMsg = `the country ${this.state.searchTerm} not found in ${this.state.region}`
                     }
                     this.setState({
                         countriesData: countryData,
@@ -74,7 +74,7 @@ export default class App extends React.Component {
                 console.log(err, err.name, err.message, err.number, err.response)
                 let errMsg = 'somthing went wrong';
                 if(err.response.status === 404) {
-                    errMsg = 'country not found anywhere'
+                    errMsg = `the country ${this.state.searchTerm} is not found anywhere`
                 }
                 this.setState({
                     errorMsg: errMsg

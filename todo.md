@@ -3,12 +3,13 @@
 - (done) custom select dropdown
 - (done) press enter to search
 - (done) have large numbers be seperated by commas (1000000 = 1,000,000)
+- (done) have all the country cards be the same shape and size (no unevenness)
+- (done) desktop and tablet version
+- (done) style error reporting
 
-- style error reporting
-- desktop and tablet version
-- have all the country cards be the same shape and size (no unevenness)
 - have search all button
 - upon first visit to the site make a request for all countries
+- make input full width
 
 - optional
   - display number of items returned

@@ -60,6 +60,13 @@ li {
   margin: auto;
 }
 
+.error-message-container p {
+  padding-right: 10px;
+  padding-left: 10px;
+  color: red;
+  margin: 0;
+}
+
 @media (min-width: 530px) {
   .content-width-wrapper {
     width: 96%;
