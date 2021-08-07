@@ -2,7 +2,7 @@
   background-color: inherit;
   // padding: 0 20px 50px 20px;
   padding: 25px;
-  max-width: 350px;
+  // max-width: 350px;
   // margin: auto;
   .country-info-container {
     padding-left: 0;
@@ -20,7 +20,7 @@
   flex-basis: initial;
   width: 6rem;
   align-items: center;
-  margin: 40px 0;
+  margin-bottom: 30px;
   // padding: 5px 30px;
   .back-arrow {
     width: 25px;
@@ -33,13 +33,16 @@
 }
 
 .border-countries-container {
-  margin-top: 40px;
+  margin-top: 21px;
   .border-countries {
+    display: flex;
+    flex-wrap: wrap;
+    // align-items: flex-start;
     .border-country-item {
       a {
         display: inline-block;
-        word-wrap: break-word;
-        max-width: 250px;
+        // word-wrap: break-word;
+        // max-width: 250px;
       }
       margin-right: 0.5rem;
       margin-top: 0.5rem;
@@ -57,7 +60,7 @@
 }
 
 
-@media(min-width: 640px) {
+@media(min-width: 457px) {
   .country-card-page {
     .country-info-container {
       display: grid;
@@ -74,6 +77,10 @@
       }
       .info-group:first-child {
         grid-area: info1;
+        margin-right: 25px;
+      }
+      .info-group1 {
+        margin-right: 40px;
       }
       .info-group:last-child {
         grid-area: info2;
@@ -109,9 +116,9 @@
       padding: 25px;
       align-self: start;
       .border-countries-container {
-        position: absolute;
-        bottom: 0;
-        left: 5%;
+        // position: absolute;
+        // bottom: 0;
+        // left: 5%;
       }
       .name {
         margin-top: 0;

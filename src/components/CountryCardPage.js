@@ -30,7 +30,7 @@ function Content(props) {
                     </div>
                     <div className="country-info-container">
                         <h2 className="name">{props.country.name}</h2>
-                        <div className="info-group">
+                        <div className="info-group info-group1">
                             <InfoItem category="Native Name" value={props.country.nativeName} />
                             <h3 className="info"> <span className="text"> Population: </span> {numberWithCommas(props.country.population)}</h3>
                             <h3 className="info"><span className="text"> Region: </span> {props.country.region}</h3>

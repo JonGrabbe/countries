@@ -1,9 +1,8 @@
 .country-card-link {
-  margin-top: 30px;
+  // margin-top: 30px;
   // max-width: 350px;
   // padding: 15px;
   // height: 220px;
-  box-sizing: border-box;
 }
 .country-card {
   background-color: $dark-mode-elements-color;
@@ -12,10 +11,12 @@
   border-radius: 7px;
   min-width: 250px;
   box-sizing: border-box;
-  margin-bottom: 25px;
+  // margin-bottom: 25px;
   // max-width: 400px;
   // margin: auto;
   padding-bottom: 44px;
+  box-sizing: border-box;
+  height: 450px;
   .country-info-container {
     padding-left: 24px;
     .info {
