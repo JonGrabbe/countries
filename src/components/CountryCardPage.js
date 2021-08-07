@@ -42,8 +42,8 @@ function Content(props) {
                             <InfoItem category="Currencies" value="Euro" />
                             <InfoItem category="Languages" value={languages} />
                         </div>
-                        <BorderCountries borders={props.country.borders} />
                     </div>
+                    <BorderCountries borders={props.country.borders} />
                 </div>
                 )
             }

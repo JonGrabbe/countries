@@ -195,6 +195,7 @@ body.dark .theme-list-item-active {
 .country-card-page {
   background-color: inherit;
   padding: 25px;
+  max-width: 1200px;
 }
 
 .country-card-page .country-info-container {
@@ -227,6 +228,7 @@ body.dark .theme-list-item-active {
 
 .border-countries-container {
   margin-top: 21px;
+  width: 95%;
 }
 
 .border-countries-container .border-countries {
@@ -278,7 +280,7 @@ body.dark .theme-list-item-active {
 @media (min-width: 950px) {
   .country-card-page {
     display: grid;
-    grid-template-areas: "backButton backButton" "flag info";
+    grid-template-areas: "backButton backButton" "flag info" "border border";
     position: relative;
     padding-bottom: 150px;
     max-width: 1100px;
@@ -289,6 +291,9 @@ body.dark .theme-list-item-active {
   }
   .country-card-page .flag-img-container {
     grid-area: flag;
+  }
+  .country-card-page .border-countries-container {
+    grid-area: border;
   }
   .country-card-page .country-info-container {
     grid-area: info;
