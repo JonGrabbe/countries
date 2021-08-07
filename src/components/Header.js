@@ -4,6 +4,7 @@ import Select from "./Select";
 import { Route } from "react-router-dom";
 import ThemeContext from "../context/theme-context";
 import CustomSelect from "./custom-select/Select";
+import SearchAllButton from "./seach-all/SearchAllButton";
 
 export default function Header(props) {
   const menuValues = [
@@ -38,6 +39,7 @@ export default function Header(props) {
               />
               {/* <Select handleSelect={props.handleSelect} region={props.region} /> */}
               <CustomSelect region={props.region} lis={menuValues} handleChange={props.handleSelect} />
+              <SearchAllButton />
             </div>
           </Route>
         </header>
