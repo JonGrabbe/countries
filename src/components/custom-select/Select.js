@@ -32,7 +32,7 @@ export default function CustomSelect(props) {
     <ThemeContext.Consumer>
       {
         themeValue => (
-          <div className={menuClassName}>
+          <div className={menuClassName+' search-control-item'}>
             <div className="select-title theme-element" onClick={() => setMenuOpened(!menuOpened)} >
               <span class="title">Filter by Region: {props.region}</span>
               <img src={themeValue.theme === 'dark' ? downArrowDarkTheme : downArrowLightTheme} className="arrow" alt="" />
