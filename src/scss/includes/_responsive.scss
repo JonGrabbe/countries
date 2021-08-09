@@ -13,18 +13,33 @@
 
 @media (min-width: 750px) {
   .search-controls-container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "input ."
+      ". button";
+    position: relative;
     .search-container {
-      width: 50%;
+      grid-area: input;
+      // width: 50%;
       max-width: 600px;
       .text-input {
         width: 100%;
       }
     }
-  }
-  .select-container {
-    margin-top: 0;
+    .select-container {
+      position: absolute;
+      top: 20px;
+      right: 0;
+      box-sizing: border-box;
+      grid-area: select;
+      margin-top: 0;
+    }
+    .search-all-button-container {
+      grid-area: button;
+      display: flex;
+      justify-content: flex-end;
+      // padding-right: 20px;
+    }
   }
 }
