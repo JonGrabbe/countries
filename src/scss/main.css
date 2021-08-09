@@ -134,6 +134,7 @@ body.dark .theme-list-item-active {
 }
 
 .search-container .text-input {
+  width: 100%;
   background-color: inherit;
   border: none;
   padding: 10px;

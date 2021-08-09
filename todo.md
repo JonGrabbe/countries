@@ -10,6 +10,7 @@
 - have search all button
 - upon first visit to the site make a request for all countries
 - make input full width
+- add keys to lists
 
 - optional
   - display number of items returned
