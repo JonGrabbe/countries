@@ -15,7 +15,7 @@ export default function SearchInput(props) {
         <ThemeContext.Consumer>
             {
                 themeValue => (
-                    <div className="search-container theme-element search-control-item">
+                    <div className="search-container theme-element">
                         <button onClick={props.handleClick} className="search-button button" >
                             {<img src={themeValue.theme === 'light' ? lightSearch : darkSearch} />}
                         </button>
