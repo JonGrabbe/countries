@@ -390,6 +390,7 @@ body.dark .theme-list-item-active {
 }
 
 .select-container .select-title {
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
