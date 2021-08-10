@@ -40,7 +40,7 @@ export default function CustomSelect(props) {
             <ul className="select-list-container theme-element">
               {
                 props.lis.map(item => (
-                  <ListItem value={item} handleChange={props.handleChange} region={props.region} />
+                  <ListItem value={item} key={item} handleChange={props.handleChange} region={props.region} />
                 ))
               }
             </ul>
