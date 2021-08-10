@@ -68,7 +68,7 @@ export default function CountryCardPage() {
         // let countryCode = getCurrentDirectory()
         axios.get('https://restcountries.eu/rest/v2/alpha/'+id)
             .then(res => {
-                console.log(res)
+                // console.log(res)
                 setCountry(res.data)
             })
     }, [id])

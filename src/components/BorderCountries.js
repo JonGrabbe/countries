@@ -21,7 +21,7 @@ export default function BorderCountries(props) {
         <div className="border-countries-container">
             <h2>Border Countries:</h2>
             <ul className="border-countries">
-                {borderCountries ? borderCountries.map(item => <BorderCountryLink country={item.data[0]} />) : null }
+                {borderCountries ? borderCountries.map(item => <BorderCountryLink country={item.data[0]} key={item.data[0].alpha3Code} />) : null }
             </ul>
         </div>
     );

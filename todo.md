@@ -11,6 +11,7 @@
 
 - upon first visit to the site make a request for all countries
 - add keys to lists
+- add loading component
 
 - optional
   - display number of items returned

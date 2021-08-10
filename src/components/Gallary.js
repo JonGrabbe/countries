@@ -9,7 +9,7 @@ export default function Gallary(props) {
     }
     return (
         <section className="gallary content-width-wrapper">
-                {props.countries.map(country => <CountryCard country={country} href={country.alpha3Code} />)}
+                {props.countries.map(country => <CountryCard country={country} href={country.alpha3Code} key={country.alpha3Code}  />)}
         </section>
     );
 }
