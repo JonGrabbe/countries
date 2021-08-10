@@ -21,6 +21,11 @@ export default class App extends React.Component {
         this.setSearchURL = this.setSearchURL.bind(this);
         this.search = this.search.bind(this);
         this.toggleTheme = this.toggleTheme.bind(this);
+        this.searchAllInRegion = this.searchAllInRegion.bind(this);
+
+        this.baseUrl = 'https://restcountries.eu/rest/v2/';
+        this.allCountriesUrl = 'https://restcountries.eu/rest/v2/all';
+        this.regionUrl = 'https://restcountries.eu/rest/v2/region/';
     }
 
     toggleTheme() {
@@ -124,6 +129,14 @@ export default class App extends React.Component {
         }
     }
 
+    searchAllInRegion() {
+        if(this.state.region === 'all') {
+            this.getCountryData(this.allCountriesUrl)
+        } else {
+          this.getCountryData(this.regionUrl+this.state.region)  
+        }
+    }
+
     render() {
         let routes = [];
         this.state.countriesData.forEach(country => {
@@ -144,6 +157,7 @@ export default class App extends React.Component {
                             region={this.state.region} 
                             search={this.search} 
                             searchTerm={this.state.searchTerm} 
+                            searchAllInRegion={this.searchAllInRegion}
                         />               
                         <Switch>
                             <Route path="/" exact>

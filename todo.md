@@ -6,10 +6,10 @@
 - (done) have all the country cards be the same shape and size (no unevenness)
 - (done) desktop and tablet version
 - (done) style error reporting
+- (done) make input full width
+- (done) have search all button
 
-- have search all button
 - upon first visit to the site make a request for all countries
-- make input full width
 - add keys to lists
 
 - optional
