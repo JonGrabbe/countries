@@ -8,9 +8,9 @@
 - (done) style error reporting
 - (done) make input full width
 - (done) have search all button
+- (done) add keys to lists
 
 - upon first visit to the site make a request for all countries
-- add keys to lists
 - add loading component
 
 - optional
